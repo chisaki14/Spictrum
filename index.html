@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="script/jquery-3.3.1.min.js"></script>
+    <script src="script/jsmediatags.min.js"></script>
+    <!-- <script src="script/worker.js"></script> -->
+    <script src="script/music.js"></script>
+    <script src="script/uiController.js"></script>
+    <script src="script/keyController.js"></script>
+    <script src="script/audioController.js"></script>
+    <script src="script/playlist.js"></script>
+    <script src="script/main.js"></script>
+    
+    <title>Spictrum</title>
+</head>
+<!-- 
+    Created by PI16-2
+ -->
+<body>
+    <div class="main-container">
+        <div class="canvas-container">
+            <canvas id="my-canvas"></canvas>
+        </div>
+        <div class="side-container">
+            <div class="icon-up-content">
+                <div class="center">
+                    <i class="fas fa-angle-up slide-up-icon" onclick="menuSlideInUp()"></i>
+                </div>
+            </div>
+            <div class="side-content">
+                <div class="close-button" onclick="menuSlideOutUp()">
+                    <i class="fas fa-times"></i>
+                </div>
+                <div class="playlist-container">
+                    <h3 class="header">My Playlist</h3>
+                    <div class="add-button">
+                        <input class="file" type="file" id="file" accept="audio/*" multiple>
+                        <label for="file" class="file-label">Add Music to My Playlist</label>
+                    </div>
+                    <div class="playlist-holder"></div>
+                </div>
+
+                <div class="current-play-container">
+                    <div class="current-play">
+                        <div class="play-info">
+                            <div class="title-content"></div>
+                            <div class="artist-content"></div>
+                            <div class="album-year-content"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="controller-container">
+                        <div class="back-bar">
+                            <div class="current-bar"></div>
+                        </div>
+                        <div class="button-list-container">
+                            <div class="loop-btn" onclick="loop()"><i class="fas fa-sync-alt"></i></div>
+                            <div onclick="prevSong()"><i class="fas fa-fast-backward"></i></div>
+                            <div><i class="fas fa-play play-btn" onclick="pause()"></i></div>
+                            <div onclick="nextSong()"><i class="fas fa-fast-forward"></i></div>
+                            <div class="shuffle-btn" onclick="shuffle()"><i class="fas fa-random"></i></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="audio-container">
+                    <audio class="audio"></audio>
+                </div>
+            </div>
+            <div class="icon-content">
+                <div class="center">
+                    <i class="fas fa-angle-left slide-icon" onclick="menuSlideOutLeft()"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal-container">
+        <div class="modal-content">
+            <div class="modal-text">
+                <i class="fas modal-icon"></i>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
