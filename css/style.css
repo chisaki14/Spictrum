@@ -184,6 +184,8 @@ div[class^="playlist-item-"]{
 .play-info{
     margin: auto;
     box-sizing: border-box;
+    width: 100%;
+    padding: 0 2px;
 }
 
 .title-content{

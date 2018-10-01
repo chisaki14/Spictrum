@@ -176,7 +176,7 @@ function generateSpectrum(){
         contextSrc.connect(analyzer);
         analyzer.connect(audioContext.destination);
         if(mobileCheck())
-            analyzer.fftSize = 256;
+            analyzer.fftSize = 512;
         else
             analyzer.fftSize = 1024;
 
