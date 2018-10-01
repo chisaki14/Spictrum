@@ -13,7 +13,7 @@ function updatePlayBtn(){
 
 function updateLoopBtn(){
     if(isLoop){
-        loopBtn.css('color', '#D8E2DC');
+        loopBtn.css('color', '#FFE5D9');
     }
     else{
         loopBtn.css('color', '#F4ACB7');
@@ -22,7 +22,7 @@ function updateLoopBtn(){
 
 function updateShuffleBtn(){
     if(isRandom){
-        shuffleBtn.css('color', '#D8E2DC');
+        shuffleBtn.css('color', '#FFE5D9');
     }
     else{
         shuffleBtn.css('color', '#F4ACB7');
