@@ -72,8 +72,20 @@ function popModal(icon){
     });
 }
 
+function hideHelp(){
+    $('.help-modal-container').css({
+        'display': 'none'
+    });
+}
+
+function showHelp(){
+    $('.help-modal-container').css({
+        'display': 'flex',
+    });
+}
+
 function menuSlideInLeft(){
-    $('.side-container').animate({left: '0px'}, "fast", () => {
+    $('.side-container').animate({margin: '0 0 0 0'}, "fast", () => {
         $('.slide-icon').removeClass("fa-angle-right");
         $('.slide-icon').addClass("fa-angle-left");
         $('.slide-icon').attr('onclick', 'menuSlideOutLeft()');
@@ -81,7 +93,7 @@ function menuSlideInLeft(){
 }
 
 function menuSlideOutLeft(){
-    $('.side-container').animate({left: '-360px'}, "fast", () => {
+    $('.side-container').animate({margin: '0 0 0 -360px'}, "fast", () => {
         $('.slide-icon').removeClass("fa-angle-left");
         $('.slide-icon').addClass("fa-angle-right");
         $('.slide-icon').attr('onclick', 'menuSlideInLeft()');

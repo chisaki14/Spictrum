@@ -73,11 +73,43 @@
                 <i class="fas fa-angle-left slide-icon" onclick="menuSlideOutLeft()"></i>
             </div>
         </div>
+        <div class="help-container">
+            <div class="help-content" onclick="showHelp()">?</div>
+        </div>
     </div>
     <div class="modal-container">
         <div class="modal-content">
             <div class="modal-text">
                 <i class="fas modal-icon"></i>
+            </div>
+        </div>
+    </div>
+    <div class="help-modal-container">
+        <div class="help-modal-content">
+            <div class="help-modal-title">
+                How to use?
+            </div>
+            <div class="help-modal-text">
+                <ol>
+                    <li>Add your favorite music to your playlist (you may add multiple items at once)</li>
+                    <li>The items will be added to your playlist</li>
+                    <li>Enjoy your favorite music :)</li>
+                </ol>
+            </div>
+            <div class="help-modal-title">
+                Additional command
+            </div>
+            <div class="help-modal-text">
+                <ul>
+                    <li>Horizontal arrow key to increase or decrease current track played duration</li>
+                    <li>Vertical arrow key to increase or decrease audio volume</li>
+                    <li>Press Space to pause / resume the audio</li>
+                    <li>Press 'Q' to listen to the previous track</li>
+                    <li>Press 'E' to listen to the next track</li>
+                </ul>
+            </div>
+            <div>
+                <button class="help-button" onclick="hideHelp()">I understand</button>
             </div>
         </div>
     </div>

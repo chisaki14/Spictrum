@@ -21,8 +21,6 @@ var loopBtn, shuffleBtn, playBtn, modalContainer, modalIcon;
 var resThreshold = 500;
 
 $(document).ready(() => {
-    console.log("Additional command\n\nHorizontal arrow key to increase or decrease current track played duration\nVertical arrow key to increase or decrease audio volume\nPress Space to pause / resume the audio\nPress 'Q' to go to previous track\nPress 'E' to go to next track");
-
     canvas = $('#my-canvas')[0];
     canvas.width = $('.canvas-container')[0].offsetWidth;
     canvas.height = $('.canvas-container')[0].offsetHeight;
@@ -100,24 +98,15 @@ $(document).ready(() => {
         }
     });
 
-    canvas.addEventListener('click', () => {
-        if(window.innerWidth > resThreshold){
-            menuSlideOutLeft();
-        }
-    });
-
-    canvas.tabIndex = 1000;
-    $('#my-canvas').on('keydown', (e) => {
+    $('body').on('keydown', (e) => {
         onKeyDown(e);
     });
 
     audio.addEventListener('ended', () => {
         if(isRandom){
             var randValue = currentPlay;
-            while(randValue == currentPlay){
-                randValue = Math.floor(Math.random() * playlist.length);
-            }
-            updateCurrentPlay(randValue, false);
+            randValue = Math.floor(Math.random() * playlist.length);
+            updateCurrentPlay(randValue, true);
         }
         else if(currentPlay == playlist.length - 1 && isLoop){
             updateCurrentPlay(0, true);

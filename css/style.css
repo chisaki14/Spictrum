@@ -3,6 +3,7 @@ body, html{
     width: 100%;
     height: 100%;
     overflow: hidden;
+    font-family: 'Raleway', sans-serif;
 }
 
 .main-container{
@@ -16,12 +17,15 @@ body, html{
     width: 100%;
     height: 100%;
     display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -2;
 }
 
 .side-container{
     width: 400px;
     height: 100%;
-    position: absolute;
     display: flex;
 }
 
@@ -30,7 +34,6 @@ body, html{
     height: 100%;
     background-color: rgba(157, 129, 137, 0.85);
     color: #FFE5D9;
-    font-family: 'Raleway', sans-serif;
     box-sizing: border-box;
     text-align: center;
 }
@@ -245,6 +248,27 @@ div[class^="playlist-item-"]{
     color: #F4ACB7;
 }
 
+.help-container{
+    position: absolute;
+    right: 15px;
+    bottom: 15px;
+    color: #FFE5D9;
+}
+
+.help-content{
+    padding: 15px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    font-size: 1.25rem;
+    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    background-color: #9D8189;
+    cursor: pointer;
+}
+
 .modal-container{
     width: 100%;
     height: 100%;
@@ -268,6 +292,63 @@ div[class^="playlist-item-"]{
     margin: auto;
     color: #FFE5D9;
     font-size: 2.5rem;
+}
+
+.help-modal-container{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(157, 129, 137, 0.4);
+}
+
+.help-modal-content{
+    background-color: #9D8189;
+    color: #FFE5D9;
+    margin: auto;
+    padding: 25px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+}
+
+.help-modal-content ol{
+    padding-left: 20px;
+    margin: 5px 0;
+    margin-bottom: 20px;
+}
+
+.help-modal-content ul{
+    padding-left: 20px;
+    margin: 5px 0;
+}
+
+.help-modal-title{
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.help-button{
+    background-color: rgba(0, 0, 0, 0);
+    border: 2px solid #FFE5D9;
+    color: #FFE5D9;
+    padding: 8px 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-top: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.help-button:focus{
+    outline: none;
 }
 
 ::-webkit-scrollbar{
