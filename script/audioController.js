@@ -22,9 +22,6 @@ function pause(){
             console.log(error);
         });
     }
-    else{
-        console.log("NO");
-    }
 }
 
 function resume(){
@@ -39,9 +36,6 @@ function resume(){
             console.log(error);
         });   
     }
-    else{
-        console.log("NO");
-    }
 }
 
 function stop(){
@@ -54,9 +48,6 @@ function stop(){
             console.log(error);
         });   
     }
-    else{
-        console.log("NO");
-    }
 }
 
 function mute(){
@@ -66,17 +57,11 @@ function mute(){
 
 function shuffle(){
     isRandom = !isRandom;
-    isLoop = false;
-    
     updateShuffleBtn();
-    updateLoopBtn();
 }
 
 function loop(){
     isLoop = !isLoop;
-    isRandom = false;
-
-    updateShuffleBtn();
     updateLoopBtn();
 }
 

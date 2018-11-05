@@ -67,9 +67,7 @@ $(document).ready(() => {
                 var file = input.files[i];
                 jsmediatags.read(file, {
                     onSuccess: onDataSuccess(file),
-                    onError: (error) => {
-                        console.log(error);
-                    }
+                    onError: onDataError(file),
                 });
             }
             input.value = "";
@@ -133,20 +131,39 @@ $(document).ready(() => {
     });
 });
 
+function onDataError(file){
+    return (error) => {
+        var img = new Image(50, 50);
+        img.src = './assets/no-image.png';
+        addToPlaylist(new Music('unknown', file.name, 'unknown', 'unknown', img, URL.createObjectURL(file)));
+
+        if(isFirstPlay){
+            currentPlay = 0;
+            play();
+        }
+    }
+}
+
 function onDataSuccess(file){
     return (tag) => {
-        artist = tag.tags.artist;
-        title = tag.tags.title;
-        album = tag.tags.album;
-        year = tag.tags.year;
+        artist = tag.tags.artist || 'unknown';
+        title = tag.tags.title || 'unknown';
+        album = tag.tags.album || 'unknown';
+        year = tag.tags.year || 'unknown';
         
         var picture = tag.tags.picture;
-        var img64String = "";
-        for(var j=0;j<picture.data.length;j++){
-            img64String += String.fromCharCode(picture.data[j]);
+        if(picture !== undefined){
+            var img64String = "";
+            for(var j=0;j<picture.data.length;j++){
+                img64String += String.fromCharCode(picture.data[j]);
+            }
+            img = new Image(50, 50);
+            img.src = "data:" + picture.format + ";base64," + window.btoa(img64String);
         }
-        img = new Image(50, 50);
-        img.src = "data:" + picture.format + ";base64," + window.btoa(img64String);
+        else{
+            var img = new Image(50, 50);
+            img.src = './assets/no-image.png';
+        }    
         addToPlaylist(new Music(artist, title, album, year, img, URL.createObjectURL(file)));
 
         if(isFirstPlay){

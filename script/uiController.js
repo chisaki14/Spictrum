@@ -49,9 +49,16 @@ function setDrawScale(){
 
 function setDetailInfo(){
     var currMusic = playlist[currentPlay];
-    currentTitle.text(currMusic.title);
-    currentArtist.text(currMusic.artist);
-    currentAlbum.text(currMusic.album + ' • ' + currMusic.year);
+    if(currMusic.title !== undefined)
+        currentTitle.text(currMusic.title);
+    
+    if(currMusic.artist !== undefined)
+        currentArtist.text(currMusic.artist);
+    
+    if(currMusic.album !== undefined && currMusic.year !== undefined)
+        currentAlbum.text(currMusic.album + ' • ' + currMusic.year);
+    else if(currMusic.album !== undefined)
+    currentAlbum.text(currMusic.album);
 }
 
 function popModal(icon){
