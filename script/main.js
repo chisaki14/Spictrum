@@ -58,7 +58,7 @@ $(document).ready(() => {
     playBtn = $('.play-btn');
     modalContainer = $('.modal-container');
     modalIcon = $('.modal-icon');
-
+    
     Array.prototype.forEach.call(inputs, (input) => {
         input.addEventListener('change', (e) => {
             for(var i=0;i<input.files.length;i++){
@@ -124,7 +124,9 @@ function onDataError(file){
     return (error) => {
         var img = new Image(50, 50);
         img.src = './assets/no-image.png';
-        addToPlaylist(new Music('unknown', file.name, 'unknown', 'unknown', img, URL.createObjectURL(file)));
+        var name = file.name;
+        name = name.substring(0, name.lastIndexOf('.'));
+        addToPlaylist(new Music('unknown', name, 'unknown', 'unknown', img, URL.createObjectURL(file)));
 
         if(isFirstPlay){
             currentPlay = 0;

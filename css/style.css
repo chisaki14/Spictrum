@@ -342,9 +342,14 @@ div[class^="playlist-item-"]{
     font-size: 16px;
     margin: 4px 2px;
     margin-top: 20px;
-    -webkit-transition-duration: 0.4s; /* Safari */
+    -webkit-transition-duration: 0.4s;
     transition-duration: 0.4s;
     cursor: pointer;
+}
+
+.help-button:hover{
+    background-color: #FFE5D9;
+    color: #9D8189;
 }
 
 .help-button:focus{
