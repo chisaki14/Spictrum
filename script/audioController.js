@@ -73,6 +73,7 @@ function play(){
 
     audio.setAttribute('src', playlist[currentPlay].audioSrc);
     audio.load();
+    audio.crossOrigin = "anonymous";
     playPromise = audio.play();
     isPlaying = true;
     isMessage = false;

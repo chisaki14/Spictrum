@@ -2,6 +2,7 @@ var canvas, canvasW, canvasH, ctx;
 var backGrad, jsmediatags;
 var inputs, audio, isFirstPlay, volume, isMuted;
 var animationId;
+var imageAngle = 0;
 
 var audioContext, contextSrc, analyzer;
 var bufferLength, freqArray;
@@ -88,7 +89,7 @@ $(document).ready(() => {
 
         setDrawRadius();
         setDrawScale();
-        imgSize = radius * 1.2;
+        imgSize = radius * 2;
 
         if(window.innerWidth > resThreshold){
             $('.side-container').css({'bottom': '0px'});
@@ -196,7 +197,7 @@ function generateSpectrum(){
         angleD = 2 / bufferLength;
         setDrawRadius();
         setDrawScale();
-        imgSize = radius * 1.2;
+        imgSize = radius * 2;
     }
 
     startAngle = Math.random() * 2;
@@ -242,8 +243,31 @@ function draw(){
 
         angle += angleD;
     }
-    
+
+    ctx.save();
+    ctx.beginPath();
+    ctx.arc(midX, midY, radius, 0, 2 * Math.PI, true);
+    ctx.closePath();
+    ctx.clip();
+
+    if(isPlaying)
+        imageAngle += 0.01;
+    ctx.translate(midX, midY);
+    ctx.rotate(imageAngle);
+    ctx.translate(-midX, -midY);
     ctx.drawImage(displayImage, midX - imgSize / 2, midY - imgSize / 2, imgSize, imgSize);
+
+    ctx.beginPath();
+    ctx.arc(midX, midY, radius / 4, 0, 2 * Math.PI, true);
+    ctx.closePath();
+    ctx.fillStyle = backGrad;
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(midX, midY, radius, 0, 2 * Math.PI, true);
+    ctx.clip();
+    ctx.closePath();
+    ctx.restore();
 
     if(playPromise !== undefined){
         currentDuration = audio.currentTime;

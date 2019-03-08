@@ -36,6 +36,8 @@ body, html{
     color: #FFE5D9;
     box-sizing: border-box;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 .header{
@@ -95,13 +97,15 @@ canvas{
 }
 
 .playlist-container{
-    height: 85vh;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
     padding: 1vh 12px;
     box-sizing: border-box;
 }
 
 .playlist-holder{
-    height: 70vh;
+    flex-grow: 1;
     overflow-y: auto;
 }
 
@@ -173,10 +177,6 @@ div[class^="playlist-item-"]{
     text-overflow: ellipsis;
     overflow: hidden;
     white-space: nowrap;
-}
-
-.current-play-container{
-    height: 15vh;
 }
 
 .current-play{
