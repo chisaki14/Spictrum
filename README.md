@@ -26,15 +26,15 @@ Spictrum is a web music player with interactive audio spectrum.
 ## Color Palette
 <table>
 <tr>
-<td><img src="assets/primary.png"></td>
+<td><img src="readme-assets/primary.png"></td>
 <td>#f4acb7</td>
 </tr>
 <tr>
-<td><img src="assets/secondary.png"></td>
+<td><img src="readme-assets/secondary.png"></td>
 <td>#ffcad4</td>
 </tr>
 <tr>
-<td><img src="assets/accent.png"></td>
+<td><img src="readme-assets/accent.png"></td>
 <td>#ffe5d9</td>
 </tr>
 </table>
