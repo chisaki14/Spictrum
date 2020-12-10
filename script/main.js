@@ -40,7 +40,7 @@ $(document).ready(() => {
 
     inputs = $('.file');
     audio = $('.audio')[0];
-    volume = 0.5;
+    volume = 0.6;
     audio.volume = volume;
     
     jsmediatags = window.jsmediatags;

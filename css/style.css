@@ -102,6 +102,7 @@ canvas{
     flex-direction: column;
     padding: 1vh 12px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 .playlist-holder{
@@ -219,7 +220,7 @@ div[class^="playlist-item-"]{
 }
 
 .controller-container{
-    height: 5vh;
+    height: 6vh;
 }
 
 .back-bar{
@@ -236,7 +237,7 @@ div[class^="playlist-item-"]{
 .button-list-container{
     display: flex;
     text-align: center;
-    height: calc(5vh - 2px);
+    height: calc(6vh - 2px);
 }
 
 .button-list-container>div{
