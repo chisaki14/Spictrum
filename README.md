@@ -13,13 +13,31 @@
 ## About Spictrum
 Spictrum is a web music player with interactive audio spectrum.
 
-<img src="readme-assets/now-playing.gif">
+<p align="center">
+    <img src="readme-assets/now-playing.gif">
+</p>
 
 ## Features
 <ul>
 	<li>Choose your music and starts playing</li>
 	<li>Audio spectrum visualizer</li>
 </ul>
+
+## Color Palette
+<table>
+<tr>
+<td><img src="assets/primary.png"></td>
+<td>#f4acb7</td>
+</tr>
+<tr>
+<td><img src="assets/secondary.png"></td>
+<td>#ffcad4</td>
+</tr>
+<tr>
+<td><img src="assets/accent.png"></td>
+<td>#ffe5d9</td>
+</tr>
+</table>
 
 ## License
 All code provided are under the [MIT License](http://opensource.org/licenses/MIT).
